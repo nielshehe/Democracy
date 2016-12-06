@@ -9,8 +9,115 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="dk.sdu.com.democracy.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Title"
+                    android:id="@+id/txtTitle"
+                    android:gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:id="@+id/spaceSubtitle"
+                    android:layout_below="@+id/txtTitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Subtitle"
+                    android:layout_below="@+id/spaceSubtitle"
+                    android:id="@+id/txtSubtitle"
+                    android:layout_centerHorizontal="true" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:id="@+id/spaceDescription"
+                    android:layout_below="@+id/txtSubtitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Subdescriptiont"
+                    android:layout_below="@+id/spaceDescription"
+                    android:id="@+id/txtSubdescription" />
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approve"
+                android:id="@+id/btnApprove" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reject"
+                android:id="@+id/btnReject"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/space"
+                android:layout_below="@+id/btnApprove" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Debate"
+                android:id="@+id/btnDebate"
+                android:layout_below="@+id/space" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistics"
+                android:id="@+id/btnStatistics"
+                android:layout_below="@+id/space"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Similar proposals"
+                android:id="@+id/btnSimilarProposals"
+                android:layout_below="@+id/btnDebate"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
