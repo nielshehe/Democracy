@@ -1,5 +1,6 @@
 package dk.sdu.com.democracy;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import dk.sdu.com.democracy.utils.Constants;
+import dk.sdu.com.democracy.utils.JsonUtil;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtTitle;
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         addListeners();
 
-        String json = getJson("lawproposals.json");
+        String json = JsonUtil.getJson(MainActivity.this, Constants.JSON_LAWPROPOSALS);
         updateUI(json);
     }
 
@@ -50,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getBaseContext(), DebateActivity.class);
-                i.putExtra(Constants.COMMENTS, getJson("comments.json"));
-                i.putExtra(Constants.ID, id);
+                i.putExtra(Constants.COMMENTS, JsonUtil.getJson(MainActivity.this, Constants.JSON_COMMENTS));
+                i.putExtra(Constants.COMMENTS_ID, id);
                 startActivity(i);
             }
         });
@@ -69,22 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    private String getJson(String name) {
-        String json = null;
-        try {
-            InputStream is = getAssets().open(name);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
     }
 
     private void updateUI(String json){

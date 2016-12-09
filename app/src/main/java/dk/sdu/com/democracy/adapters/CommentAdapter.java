@@ -32,4 +32,10 @@ public class CommentAdapter extends ArrayAdapter<CommentItem> {
 
         return convertView;
     }
+
+
+
+    //public CommentItem getItem(int position){
+    //    return getItem(position);
+    //}
 }

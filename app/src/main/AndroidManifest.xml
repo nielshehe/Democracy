@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DebateActivity"/>
+        <activity android:name=".DebateItemActivity"/>
     </application>
 
 </manifest>

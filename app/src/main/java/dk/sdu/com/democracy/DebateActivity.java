@@ -3,6 +3,8 @@ package dk.sdu.com.democracy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,12 +21,9 @@ import java.util.Map;
 import dk.sdu.com.democracy.adapters.CommentAdapter;
 import dk.sdu.com.democracy.adapters.CommentItem;
 import dk.sdu.com.democracy.utils.Constants;
+import dk.sdu.com.democracy.utils.JsonUtil;
 
 public class DebateActivity extends AppCompatActivity {
-
-    private ListView listView;
-    private TextView txtUser;
-    private TextView txtComment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +35,7 @@ public class DebateActivity extends AppCompatActivity {
 
     private void updateList(){
         String comments = getIntent().getStringExtra(Constants.COMMENTS);
+
         try{
             ArrayList<CommentItem> arrayOfUsers = new ArrayList<CommentItem>();
 
@@ -70,7 +70,30 @@ public class DebateActivity extends AppCompatActivity {
                 adapter.add(item);
             }
 
-            //listView.setAdapter(adapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> adapter, View v, int position, long arg){
+                    CommentItem item = (CommentItem)adapter.getItemAtPosition(position);
+
+                    String name = item.name.substring(0, item.name.length() - 1);
+
+                    String json = JsonUtil.getJson(DebateActivity.this, Constants.JSON_COMMENTS);
+                    System.out.println("json: "+json);
+
+                    try{
+                        JSONObject obj = new JSONObject(json);
+                        String description = obj.getString(name);
+
+                        Intent i = new Intent(DebateActivity.this, DebateItemActivity.class);
+                        i.putExtra("name", name);
+                        i.putExtra("description", description);
+                        startActivity(i);
+                    }
+                    catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
         catch (JSONException e){
             e.printStackTrace();
