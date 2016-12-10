@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".DebateActivity"/>
         <activity android:name=".DebateItemActivity"/>
+        <activity android:name=".DebateWriteCommentActivity"/>
     </application>
 
 </manifest>

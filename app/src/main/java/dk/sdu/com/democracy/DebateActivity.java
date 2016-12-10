@@ -2,6 +2,7 @@ package dk.sdu.com.democracy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +25,7 @@ import dk.sdu.com.democracy.utils.Constants;
 import dk.sdu.com.democracy.utils.JsonUtil;
 
 public class DebateActivity extends AppCompatActivity {
+    private FloatingActionButton btnComment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,17 @@ public class DebateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_debate);
 
         updateList();
+
+        btnComment = (FloatingActionButton)findViewById(R.id.btnComment);
+        btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Opens activity, but does not store comment!
+                Intent i = new Intent(getBaseContext(), DebateWriteCommentActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void updateList(){
@@ -78,7 +91,6 @@ public class DebateActivity extends AppCompatActivity {
                     String name = item.name.substring(0, item.name.length() - 1);
 
                     String json = JsonUtil.getJson(DebateActivity.this, Constants.JSON_COMMENTS);
-                    System.out.println("json: "+json);
 
                     try{
                         JSONObject obj = new JSONObject(json);
