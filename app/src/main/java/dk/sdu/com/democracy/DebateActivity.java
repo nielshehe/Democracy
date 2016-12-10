@@ -57,6 +57,10 @@ public class DebateActivity extends AppCompatActivity {
             ListView listView = (ListView) findViewById(R.id.listview);
             listView.setAdapter(adapter);
 
+            // Json upvotes
+            String jsonUpvotes = JsonUtil.getJson(DebateActivity.this, Constants.JSON_COMMENTS_UPVOTES);
+            JSONObject jsonUpvotesMap = new JSONObject(jsonUpvotes);
+
             // Appending comments
             JSONObject map = new JSONObject(comments);
 
@@ -64,6 +68,7 @@ public class DebateActivity extends AppCompatActivity {
             while(users.hasNext()){
                 String user = (String)users.next();
                 String comment = map.getString(user);
+                int upvotes = jsonUpvotesMap.getInt(user);
 
                 int commentLength = 200;
                 if (comment.length() > commentLength){
@@ -74,11 +79,11 @@ public class DebateActivity extends AppCompatActivity {
                         strippedComment.append(comment.charAt(i));
                     }
 
-                    comment = strippedComment.toString() + "...\n\nLæs mere";
+                    comment = strippedComment.toString() + "...";
                 }
 
 
-                CommentItem item = new CommentItem(user+ ":", comment);
+                CommentItem item = new CommentItem(user+ ":", comment, upvotes, "Læs mere");
 
                 adapter.add(item);
             }
