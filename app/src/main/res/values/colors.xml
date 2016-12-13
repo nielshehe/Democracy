@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#E8EAF6</color>
+    <color name="light_indigo">#7986CB</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="dark_indigo">#1A237E</color>
+    <color name="black">#000000</color>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
