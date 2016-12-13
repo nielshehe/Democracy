@@ -26,9 +26,13 @@ public class CommentAdapter extends ArrayAdapter<CommentItem> {
 
         TextView tvName = (TextView) convertView.findViewById(R.id.txtUser);
         TextView tvComment = (TextView) convertView.findViewById(R.id.txtComment);
+        TextView tvUpvotes = (TextView) convertView.findViewById(R.id.txtUpvotes);
+        TextView tvReadMore = (TextView) convertView.findViewById(R.id.txtReadMore);
 
         tvName.setText(comment.name);
         tvComment.setText(comment.comment);
+        tvUpvotes.setText(comment.upvotes + " upvotes");
+        tvReadMore.setText(comment.readMore);
 
         return convertView;
     }

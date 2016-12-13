@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!--
+        android:id="@+id/view_graphical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+-->
+    <!--<LinearLayout
+        android:id="@+id/chart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+    </LinearLayout>
+    -->
+
+    <!--<FrameLayout
+        android:id="@+id/frame_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        -->
+
+    <TextView
+        android:text="Lov om ændring af lov om hunde og dyreværnsloven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/txtTitle" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:id="@+id/spaceTitle"
+        android:layout_below="@+id/txtTitle" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@id/spaceTitle"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Konsensus- og popularitetsmåling"
+                android:id="@+id/txtConsensus"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_below="@+id/scrollView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/konsensusogpopularitetmaaling"
+                android:id="@+id/imgConsensus"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/txtConsensus" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:id="@+id/spaceKonsensus"
+                android:layout_below="@+id/imgConsensus" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Følelsesmåling"
+                android:id="@+id/txtFoelsesmaaling"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_below="@+id/spaceKonsensus"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.08" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/foelsesmaaling"
+                android:id="@+id/imgFoelses"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/txtFoelsesmaaling" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:id="@+id/spaceFoelses"
+                android:layout_below="@+id/imgFoelses" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Meningsmåling"
+                android:id="@+id/txtMenings"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_below="@+id/spaceFoelses"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/meningsmaaling"
+                android:id="@+id/imgMenings"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/txtMenings" />
+<!--            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:id="@+id/spaceMenings"
+                android:layout_below="@+id/imgMenings" />
+                -->
+        </LinearLayout>
+
+        <!--</FrameLayout>-->
+    </ScrollView>
+</RelativeLayout>

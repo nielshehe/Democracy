@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip">
+    <EditText
+        android:id="@+id/txtWriteComment"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:imeOptions="actionDone"
+        android:gravity="top"
+        android:hint="Skriv dit debatindlæg"
+        android:inputType="text"
+        />
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+    </ScrollView>
+</LinearLayout>

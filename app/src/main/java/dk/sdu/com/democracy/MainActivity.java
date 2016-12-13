@@ -61,7 +61,10 @@ public class MainActivity extends AppCompatActivity {
         statistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getBaseContext(), StatisticsActivity.class);
+                //i.putExtra(Constants.COMMENTS, JsonUtil.getJson(MainActivity.this, Constants.JSON_COMMENTS));
+                //i.putExtra(Constants.COMMENTS_ID, id);
+                startActivity(i);
             }
         });
 

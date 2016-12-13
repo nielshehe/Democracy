@@ -17,6 +17,22 @@
             android:text="Comment"
             android:id="@+id/txtComment"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Upvotes"
+            android:gravity="right"
+            android:id="@+id/txtUpvotes" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Read more"
+            android:id="@+id/txtReadMore"
+            android:layout_below="@id/txtUpvotes"/>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp"
