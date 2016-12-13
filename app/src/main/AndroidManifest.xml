@@ -18,6 +18,8 @@
         <activity android:name=".DebateActivity"/>
         <activity android:name=".DebateItemActivity"/>
         <activity android:name=".DebateWriteCommentActivity"/>
+        <activity android:name=".StatisticsActivity"/>
+        <activity android:name="org.achartengine.GraphicalActivity"/>
     </application>
 
 </manifest>
