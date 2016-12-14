@@ -65,60 +65,53 @@
 
         </ScrollView>
 
-        <RelativeLayout
+        <!-- Here goes the Opinion buttons for the current law in view-->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- Approve Law Button -->
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/even_fit"
                 android:text="Approve"
-                android:background="@drawable/button_selector"
                 android:id="@+id/btnApprove" />
-
+            <!-- Reject Law Button -->
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/even_fit"
                 android:text="Reject"
-                android:id="@+id/btnReject"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:id="@+id/btnReject" />
+        </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:id="@+id/space"
-                android:layout_below="@+id/btnApprove" />
+        <View style="@style/Divider"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <!-- Leads to the Statistics page -->
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Debate"
-                android:id="@+id/btnDebate"
-                android:layout_below="@+id/space" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/even_fit"
                 android:text="Statistics"
-                android:id="@+id/btnStatistics"
-                android:layout_below="@+id/space"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
+                android:id="@+id/btnStatistics" />
+            <!-- Leads to the similar proposal page -->
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/even_fit"
                 android:text="Similar proposals"
-                android:id="@+id/btnSimilarProposals"
-                android:layout_below="@+id/btnDebate"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:id="@+id/btnSimilarProposals" />
+        </LinearLayout>
 
-        </RelativeLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <!-- Leads to the debate Page -->
+            <Button
+                style="@style/even_fit"
+                android:text="Debate"
+                android:id="@+id/btnDebate" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
