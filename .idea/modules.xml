@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DemocracySystem.iml" filepath="$PROJECT_DIR$/DemocracySystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Democracy.iml" filepath="$PROJECT_DIR$/Democracy.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

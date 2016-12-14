@@ -3,9 +3,30 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
+        <item name="colorPrimary">@color/indigo</item>
+        <item name="colorPrimaryDark">@color/dark_indigo</item>
+        <item name="colorAccent">@color/light_indigo</item>
+        <!--<item name="colorBackground">@color/white_indigo</item>-->
+        <!--<item name="textColorPrimary">@color/black</item>-->
 
+    </style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginBottom">20px</item>
+        <item name="android:layout_marginTop">20px</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+    <!--
+    A style used for then multiple items need to be on the same line
+    and be evenly distributed
+    -->
+    <style name="even_fit">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>
