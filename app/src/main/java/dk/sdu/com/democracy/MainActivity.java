@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         relLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("----------- clicked -----------");
                 Intent i = new Intent(getBaseContext(), LawProposalActivity.class);
+                i.putExtra(Constants.JSON_LAWPROPOSALS, JsonUtil.getJson(MainActivity.this, Constants.JSON_LAWPROPOSALS));
                 startActivity(i);
             }
         });

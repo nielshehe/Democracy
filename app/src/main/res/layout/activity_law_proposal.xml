@@ -9,4 +9,59 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="dk.sdu.com.democracy.LawProposalActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Title"
+                android:id="@+id/txtTitle"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:clickable="false"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:id="@+id/spaceSubtitle"
+                android:layout_below="@+id/txtTitle"
+                android:clickable="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Subtitle"
+                android:layout_below="@+id/spaceSubtitle"
+                android:id="@+id/txtSubtitle"
+                android:layout_centerHorizontal="true"
+                android:clickable="false"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:id="@+id/spaceDescription"
+                android:layout_below="@+id/txtSubtitle"
+                android:clickable="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Subdescriptiont"
+                android:layout_below="@+id/spaceDescription"
+                android:id="@+id/txtDescription"
+                android:clickable="false"/>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
