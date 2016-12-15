@@ -19,7 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/btnComment"
-        android:src="?android:attr/listChoiceIndicatorSingle"/>
+        android:src="@drawable/plusplus" />
 
     <TextView
         android:layout_width="wrap_content"

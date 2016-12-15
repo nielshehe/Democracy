@@ -30,9 +30,10 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:src="@drawable/debatenotliked"
+        android:background="@null"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/imgBtnUpVote" />
+        android:id="@+id/imgBtnDislike" />
 </RelativeLayout>

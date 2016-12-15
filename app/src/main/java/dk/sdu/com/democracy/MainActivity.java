@@ -2,11 +2,17 @@ package dk.sdu.com.democracy;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
+import android.support.v4.view.ScrollingView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtSubtitle;
     private TextView txtSubdescription;
 
-    private Button comments;
-    private Button statistics;
-    private Button similarProposals;
+    private ImageButton comments;
+    private ImageButton statistics;
+
+    private ImageButton like;
+    private ImageButton dislike;
+    private ImageButton neutral;
 
     private String id;
 
@@ -37,14 +46,29 @@ public class MainActivity extends AppCompatActivity {
         txtSubtitle = (TextView) findViewById(R.id.txtSubtitle);
         txtSubdescription = (TextView) findViewById(R.id.txtSubdescription);
 
-        comments = (Button)findViewById(R.id.btnDebate);
-        statistics = (Button)findViewById(R.id.btnStatistics);
-        similarProposals = (Button)findViewById(R.id.btnSimilarProposals);
+        comments = (ImageButton)findViewById(R.id.btnDebate);
+        statistics = (ImageButton)findViewById(R.id.btnStatistics);
+
+        like = (ImageButton)findViewById(R.id.btnLike);
+        dislike = (ImageButton)findViewById(R.id.btnDislike);
+        neutral = (ImageButton)findViewById(R.id.btnNeutral);
+
 
         addListeners();
 
         String json = JsonUtil.getJson(MainActivity.this, Constants.JSON_LAWPROPOSALS);
         updateUI(json);
+
+        //ScrollView scrollTop = (ScrollView) findViewById(R.id.scrollViewTop);
+        RelativeLayout relLayout = (RelativeLayout) findViewById(R.id.relLayout);
+        relLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("----------- clicked -----------");
+                Intent i = new Intent(getBaseContext(), LawProposalActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void addListeners(){
@@ -68,12 +92,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        similarProposals.setOnClickListener(new View.OnClickListener() {
+        like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                makeText("Du har stemt for ved dette lovforslag");
             }
         });
+
+        dislike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeText("Du har stemt imod ved dette lovforslag");
+            }
+        });
+
+        neutral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeText("Du er neutral ved dette lovforslag");
+            }
+        });
+
+    }
+
+    private void makeText(String text){
+        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
     }
 
     private void updateUI(String json){

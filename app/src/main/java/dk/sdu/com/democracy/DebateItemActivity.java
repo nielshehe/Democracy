@@ -1,6 +1,7 @@
 package dk.sdu.com.democracy;
 
 import android.content.Intent;
+import android.graphics.ColorFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,6 +24,8 @@ public class DebateItemActivity extends AppCompatActivity {
 
     private ImageButton imgBtnUpVote;
 
+    private int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +37,20 @@ public class DebateItemActivity extends AppCompatActivity {
         user.setText(getIntent().getStringExtra("name"));
         description.setText(getIntent().getStringExtra("description"));
 
-        imgBtnUpVote = (ImageButton)findViewById(R.id.imgBtnUpVote);
+        imgBtnUpVote = (ImageButton)findViewById(R.id.imgBtnDislike);
         imgBtnUpVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO
+
+                if(count % 2 == 0){
+                    imgBtnUpVote.setImageResource(R.drawable.debateliked);
+                }
+
+                else{
+                    imgBtnUpVote.setImageResource(R.drawable.debatenotliked);
+                }
+
+                count++;
             }
         });
     }
