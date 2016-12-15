@@ -21,6 +21,7 @@
         <activity android:name=".StatisticsActivity"/>
         <activity android:name="org.achartengine.GraphicalActivity"/>
         <activity android:name=".LawProposalActivity"/>
+        <activity android:name=".MoreInfoActivity"/>
     </application>
 
 </manifest>
